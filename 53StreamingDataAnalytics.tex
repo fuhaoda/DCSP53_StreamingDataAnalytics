@@ -156,9 +156,18 @@ Suppose the data $X_1, X_2, X_3, \cdots$ are coming in sequence. How can we cont
 The solution could be related stochastic gradient decent approach. We also need some efficient solution, such as modified limited memory BFGS algorithms. 
 
 
-\section{Framework}
+\section{Extension}
 
-
+We can also add a weigh to each of $X_i$ or its corresponding functions, such as
+\begin{align*}
+\theta & \mapsto M_n(\theta) = \frac{1}{n} \sum_{i=1}^n w_i m_{\theta} (X_i).
+\end{align*} 
+and
+\begin{align*}
+Z_n(\theta) &= \frac{1}{n} \sum_{i=1}^n w_i Z_{\theta}(X_i)=0,
+\end{align*}
+with $ \sum_{i=1}^n w_i =1$ and $w_i \ge 0, \forall i$.
+Through weighting, we can put more weight on the recent $X_i$ and less weight on the $X_i$ far way from current. 
 
 \section*{Appendix: Proof of Equation ()}.
 
